@@ -105,11 +105,7 @@ Java_com_example_administrator_ffmpegandroiddemo_MainActivity_playVideo(JNIEnv *
     DDLogI("video resolution: %d , %d ",videoWidth,videoHeight);
 
     // 设置native window的buffer大小,可自动拉伸
-    ;
-
-
-    if (0 > ANativeWindow_setBuffersGeometry(nativeWindow, videoWidth, videoHeight,
-                                             WINDOW_FORMAT_RGBX_8888)){
+    if (0 > ANativeWindow_setBuffersGeometry(nativeWindow, videoWidth, videoHeight, WINDOW_FORMAT_RGBX_8888)){
         DDLogE("Couldn't set buffers geometry.\n");
         ANativeWindow_release(nativeWindow);
         return -1;

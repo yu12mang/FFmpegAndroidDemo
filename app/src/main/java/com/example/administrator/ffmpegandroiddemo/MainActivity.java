@@ -13,11 +13,6 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
-    private String[] permissions = {android.Manifest.permission.READ_EXTERNAL_STORAGE, android.Manifest.permission
-            .WRITE_EXTERNAL_STORAGE,
-            android.Manifest.permission.CAMERA, android.Manifest.permission.RECORD_AUDIO, android.Manifest.permission
-            .INTERNET, android.Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS};
-
     static {
         System.loadLibrary("native-lib");
         System.loadLibrary("avcodec-57");
@@ -31,16 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        //全屏
-//        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         setContentView(R.layout.activity_main);
-//        ActivityCompat.requestPermissions(this, permissions, 0);
-        TextView tv = (TextView) findViewById(R.id.sample_text);
-//        tv.setText(stringFromJNI());
-
 
         SurfaceView surfaceView = (SurfaceView) findViewById(R.id.surface_view);
         SurfaceHolder holder = surfaceView.getHolder();
